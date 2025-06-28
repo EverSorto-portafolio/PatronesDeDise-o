@@ -5,26 +5,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio
+namespace Codigo_Limpio.Singleton
 {
     internal class Clase1Singleton
     {
-       
+
         public static Clase1Singleton instancia;
 
         private Clase1Singleton()
         {
             // Constructor privado para evitar instanciación externa
         }
-        public static Clase1Singleton getInstancia() {
-            if(instancia == null)
+        public static Clase1Singleton getInstancia()
+        {
+            if (instancia == null)
             {
                 instancia = new Clase1Singleton();
             }
             return instancia;
         }
 
-        
+
 
     }
 }

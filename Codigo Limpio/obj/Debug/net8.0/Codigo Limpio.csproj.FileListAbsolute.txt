@@ -12,3 +12,4 @@ C:\Users\everc\OneDrive\Documentos\Progrmacion\puntonet\Codigo Limpio\Codigo Lim
 C:\Users\everc\OneDrive\Documentos\Progrmacion\puntonet\Codigo Limpio\Codigo Limpio\obj\Debug\net8.0\Codigo Limpio.pdb
 C:\Users\everc\OneDrive\Documentos\Progrmacion\puntonet\Codigo Limpio\Codigo Limpio\obj\Debug\net8.0\Codigo Limpio.genruntimeconfig.cache
 C:\Users\everc\OneDrive\Documentos\Progrmacion\puntonet\Codigo Limpio\Codigo Limpio\obj\Debug\net8.0\ref\Codigo Limpio.dll
+C:\Users\everc\OneDrive\Documentos\Progrmacion\puntonet\Codigo Limpio\Codigo Limpio\obj\Debug\net8.0\Codigo Limpio.sourcelink.json
