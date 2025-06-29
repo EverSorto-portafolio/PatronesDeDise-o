@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.ejecicio
+namespace Codigo_Limpio.PatronBuilder.ejecicio
 {
     public class GupoMuscular
     {

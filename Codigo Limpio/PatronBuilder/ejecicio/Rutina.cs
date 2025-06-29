@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.ejecicio
+namespace Codigo_Limpio.PatronBuilder.ejecicio
 {
     public class Rutina
     {
@@ -51,11 +51,11 @@ namespace Codigo_Limpio.ejecicio
 
                 bool valor = input == "s" || input == "si";
                 prop.SetValue(iterador, valor);
-                
+
             }
             Console.WriteLine("Rutina actualizada correctamente.");
             entrenamiento.mostrarGrupoMuscular();
         }
-        
+
     }
 }
