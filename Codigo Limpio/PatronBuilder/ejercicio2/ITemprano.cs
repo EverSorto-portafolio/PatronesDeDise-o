@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.ejercicio2
+namespace Codigo_Limpio.PatronBuilder.ejercicio2
 {
     public interface ITemprano
     {
@@ -19,6 +19,6 @@ namespace Codigo_Limpio.ejercicio2
         void Tocino(string descripcion);
         void Pollo(string descripcion);
         Comida getComida();
-       
+
     }
 }

@@ -1,6 +1,8 @@
-﻿using Codigo_Limpio.ejercicio2;
+﻿using Codigo_Limpio.AbstracFactory;
+using Codigo_Limpio.AbstracFactory.Factory;
 using Codigo_Limpio.PatronBuilder;
 using Codigo_Limpio.PatronBuilder.ejecicio;
+using Codigo_Limpio.PatronBuilder.ejercicio2;
 
 //IModelo modelo = new Plano();
 //CasaCampoEconomica casa = new (modelo);
@@ -44,3 +46,15 @@ receta.getComida();
 Console.WriteLine("--------------------------------------------------------------");
 Console.WriteLine("--------------------------------------------------------------");
 Console.WriteLine("--------------------------------------------------------------");
+
+IThema gui = new WinFactory();
+IButton boton = gui.CreateButton();
+boton.Render();
+
+gui = new MacFactory();
+boton= gui.CreateButton();
+boton.Render();
+
+gui = new LinuxFactory();
+boton = gui.CreateButton();
+boton.Render();

@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.ejercicio2
+namespace Codigo_Limpio.PatronBuilder.ejercicio2
 {
-    public class ComidaDeMama : ITemprano
+    public class Tarde : ITemprano
     {
-       private  Comida comida = new Comida();
+
+        private Comida comida = new Comida();
 
         public void Carne(string descripcion)
         {

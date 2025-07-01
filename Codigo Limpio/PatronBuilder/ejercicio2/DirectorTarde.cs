@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.ejercicio2
+namespace Codigo_Limpio.PatronBuilder.ejercicio2
 {
-    public  class DirectorTarde
+    public class DirectorTarde
     {
-         public void IngredienteTarde( Tarde comidaTarde  ) { 
-        
+        public void IngredienteTarde(Tarde comidaTarde)
+        {
+
             comidaTarde.Pan("Pan de ajo");
             comidaTarde.Tortilla("Tortilla de maíz");
             comidaTarde.Lechuga("Lechuga romana");
