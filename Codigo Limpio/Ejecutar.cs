@@ -8,6 +8,8 @@ using Codigo_Limpio.AbstracFactory.Ejercicio3;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.Fabrica;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.implementaciones;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.PaimentServices;
+using Codigo_Limpio.FactoryMethod;
+using Codigo_Limpio.FactoryMethod.Producto.Factory;
 using Codigo_Limpio.PatronBuilder;
 using Codigo_Limpio.PatronBuilder.ejecicio;
 using Codigo_Limpio.PatronBuilder.ejercicio2;
@@ -129,6 +131,20 @@ utilizar.ProcesarPago(montoPago);
 // cambiamos a Stripe
 
 // inyectamos la fabrica
+
+Console.WriteLine("--------------------------------------------------------------");
+Console.WriteLine("--------------------------------------------------------------");
+Console.WriteLine("--------------------------------------------------------------");
+
+Console.WriteLine("Prueba Facorty Method _______________________________________");
+
+VehiculoFacroty vehiculoFacroty;
+
+vehiculoFacroty = new LanchaFactory();
+IVehiculo vehiculo = vehiculoFacroty.crearVehiculo();
+vehiculoFacroty.Transprote();
+Console.WriteLine("Vehiculo creado: " + vehiculo.GetType().Name);
+
 
 
 
