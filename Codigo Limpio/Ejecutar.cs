@@ -9,6 +9,9 @@ using Codigo_Limpio.AbstracFactory.Ejercicio3.Fabrica;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.implementaciones;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.PaimentServices;
 using Codigo_Limpio.FactoryMethod;
+using Codigo_Limpio.FactoryMethod.Ejercicio1;
+using Codigo_Limpio.FactoryMethod.Ejercicio1.implementacion;
+using Codigo_Limpio.FactoryMethod.Ejercicio1.interfaz;
 using Codigo_Limpio.FactoryMethod.Producto.Factory;
 using Codigo_Limpio.PatronBuilder;
 using Codigo_Limpio.PatronBuilder.ejecicio;
@@ -147,4 +150,11 @@ Console.WriteLine("Vehiculo creado: " + vehiculo.GetType().Name);
 
 
 
+Console.WriteLine("Prueba Facorty Method ___________ Mensaje____________________________");
+
+MensajeFactory mensajeFactory;
+mensajeFactory = new HotMailFactory();
+IMensaje mensaje = mensajeFactory.CrearMensaje();
+
+mensajeFactory.Mostrar();
 
