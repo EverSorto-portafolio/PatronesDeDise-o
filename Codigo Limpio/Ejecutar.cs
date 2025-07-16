@@ -18,6 +18,8 @@ using Codigo_Limpio.FactoryMethod.Producto.Factory;
 using Codigo_Limpio.PatronBuilder;
 using Codigo_Limpio.PatronBuilder.ejecicio;
 using Codigo_Limpio.PatronBuilder.ejercicio2;
+using Codigo_Limpio.Prototype.clones;
+using System.Xml.Linq;
 
 //IModelo modelo = new Plano();
 //CasaCampoEconomica casa = new (modelo);
@@ -168,3 +170,44 @@ Inotificacion notificacion = notificationFactory.CrearNotificacion();
 notificacion.enviar("Hola, esta es una notificación por push.");
 Console.WriteLine("Notificación creada: " + notificacion.GetType().Name);
 
+Console.WriteLine("Prueba Facorty Method2 ___________ Prototype____________________________");
+
+Circulo circulo = new Circulo("Circulo");
+circulo.Id = 1;
+
+Rectangulo rectangulo = new Rectangulo("Rectangulo");
+rectangulo.Id = 2;
+
+Triangulo triangulo = new Triangulo("Triangulo");
+triangulo.Id = 3;
+Console.WriteLine("Prueba Facorty Method2 ___________ Original____________________________");
+circulo.dibujar();
+rectangulo.dibujar();
+triangulo.dibujar();
+Console.WriteLine("Prueba Facorty Method2 ___________ Copiar____________________________");
+
+Circulo copiaCirculo = (Circulo) circulo.clone();
+Rectangulo copiaRectangulo = (Rectangulo)rectangulo.clone();
+Triangulo copiaTriangulo = (Triangulo)triangulo.clone();
+
+copiaCirculo.dibujar();
+copiaRectangulo.dibujar();
+copiaTriangulo.dibujar();
+
+Console.WriteLine("Prueba Facorty Method2 ___________ Modificar____________________________");
+
+copiaCirculo.Name = "Nuevo Circulo";
+copiaRectangulo.Name = "Nuevo Rectangulo";
+copiaTriangulo.Name = "Nuevo Triangulo";
+
+copiaCirculo.Id = 4;
+copiaRectangulo.Id = 5;
+copiaTriangulo.Id = 6;
+copiaCirculo.dibujar();
+copiaRectangulo.dibujar();
+copiaTriangulo.dibujar();
+Console.WriteLine("Prueba Facorty Method2 ___________ Original____________________________");
+
+circulo.dibujar();
+rectangulo.dibujar();
+triangulo.dibujar();
