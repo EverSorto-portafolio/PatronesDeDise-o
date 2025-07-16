@@ -1,4 +1,6 @@
 ﻿using Codigo_Limpio.FactoryMethod.Ejercicio1.interfaz;
+using Codigo_Limpio.FactoryMethod.Ejercicio2.Producto;
+using Codigo_Limpio.FactoryMethod.Factories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace Codigo_Limpio.FactoryMethod.Ejercicio1.implementacion
 {
-    internal class PuschFactory : MensajeFactory
+    internal class PuschFactory : NotificationFactory
     {
-        public override IMensaje CrearMensaje()
+        public override Inotificacion CrearNotificacion()
         {
-            return new pushMesajje();
+            return new PushNotification();
         }
     }
 }

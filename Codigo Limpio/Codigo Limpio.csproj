@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="FactoryMethod\Factories\" />
+    <Folder Include="FactoryMethod\Ejercicio2\Implementaciones\" />
   </ItemGroup>
 
 </Project>

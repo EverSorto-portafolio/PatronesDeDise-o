@@ -12,6 +12,8 @@ using Codigo_Limpio.FactoryMethod;
 using Codigo_Limpio.FactoryMethod.Ejercicio1;
 using Codigo_Limpio.FactoryMethod.Ejercicio1.implementacion;
 using Codigo_Limpio.FactoryMethod.Ejercicio1.interfaz;
+using Codigo_Limpio.FactoryMethod.Ejercicio2.Producto;
+using Codigo_Limpio.FactoryMethod.Factories;
 using Codigo_Limpio.FactoryMethod.Producto.Factory;
 using Codigo_Limpio.PatronBuilder;
 using Codigo_Limpio.PatronBuilder.ejecicio;
@@ -157,4 +159,12 @@ mensajeFactory = new HotMailFactory();
 IMensaje mensaje = mensajeFactory.CrearMensaje();
 
 mensajeFactory.Mostrar();
+
+Console.WriteLine("Prueba Facorty Method2 ___________ Mensaje 2____________________________");
+
+NotificationFactory notificationFactory;
+notificationFactory = new PuschFactory();
+Inotificacion notificacion = notificationFactory.CrearNotificacion();
+notificacion.enviar("Hola, esta es una notificación por push.");
+Console.WriteLine("Notificación creada: " + notificacion.GetType().Name);
 
