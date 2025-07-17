@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.Prototype.clones
+namespace Codigo_Limpio.Prototype.Ejemplo1
 {
     public class Rectangulo : ImplementPrototype
     {
@@ -14,7 +14,7 @@ namespace Codigo_Limpio.Prototype.clones
         }
         public override void dibujar()
         {
-           Console.WriteLine("Dibujando un rectangulo con id: " + Id + " y nombre: " + Name);
+            Console.WriteLine("Dibujando un rectangulo con id: " + Id + " y nombre: " + Name);
         }
     }
 }

@@ -18,7 +18,7 @@ using Codigo_Limpio.FactoryMethod.Producto.Factory;
 using Codigo_Limpio.PatronBuilder;
 using Codigo_Limpio.PatronBuilder.ejecicio;
 using Codigo_Limpio.PatronBuilder.ejercicio2;
-using Codigo_Limpio.Prototype.clones;
+using Codigo_Limpio.Prototype.Ejemplo1;
 using System.Xml.Linq;
 
 //IModelo modelo = new Plano();
