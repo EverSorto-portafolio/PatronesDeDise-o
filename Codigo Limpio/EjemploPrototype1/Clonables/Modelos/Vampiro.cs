@@ -2,27 +2,38 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Codigo_Limpio.EjemploPrototype1.Clonables.Modelos
 {
-    public class Vampiro : Implementar_EnemigoClone
+    public class Vampiro : ClonarEnemigos
     {
-        public string  Ataque { get; set; }
-        public decimal vida { get; set; }
+        //public int Id { get; set; }
+        //public bool isTransform { get; set; }
+        //public string Name { get; set; }
 
-        public void ataque(string explicarAtaque) { 
-            Ataque = explicarAtaque;
+        public decimal puntosDevida { get; set; }
+        public Vampiro()
+        {
         }
-        public void vidaVampiro( decimal vidaInicial) {
-            vida = vidaInicial;
+        public void vida(decimal puntos) {
+            puntosDevida = puntos;
+        }
+        public void Istransformation(bool isTransform)
+        {
+            this.isTransform = isTransform;
         }
 
+        public void NameVampire(string name)
+        {
+            Name = name;
+        }
 
         public override void LlamaEnemigo()
         {
-            return Vampiro this.MemberwiseClone();
+            Console.WriteLine($"Propiedades nombre : {Name} , puntos de vida {puntosDevida}, se puedetrans formar { isTransform}");
         }
     }
 }

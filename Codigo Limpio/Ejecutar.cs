@@ -8,6 +8,7 @@ using Codigo_Limpio.AbstracFactory.Ejercicio3;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.Fabrica;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.implementaciones;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.PaimentServices;
+using Codigo_Limpio.EjemploPrototype1.Clonables.Modelos;
 using Codigo_Limpio.FactoryMethod;
 using Codigo_Limpio.FactoryMethod.Ejercicio1;
 using Codigo_Limpio.FactoryMethod.Ejercicio1.implementacion;
@@ -211,3 +212,18 @@ Console.WriteLine("Prueba Facorty Method2 ___________ Original__________________
 circulo.dibujar();
 rectangulo.dibujar();
 triangulo.dibujar();
+
+
+Console.WriteLine("Prueba Facorty Method2 ___________ Original____________________________");
+HombreLobo hombreLobo = new HombreLobo();
+hombreLobo.NameHombreLobo("Lupin");
+hombreLobo.isTransformacion(true);
+hombreLobo.DevilidadHombreLobo("Plata (El chambiar)");
+hombreLobo.LunaLlena(true);
+hombreLobo.AtaqueHombreLobo("Mordida");
+hombreLobo.LlamaEnemigo();
+
+Console.WriteLine("Prueba Facorty Method2 ___________Copia____________________________");
+HombreLobo copiaHombreLobo = (HombreLobo)hombreLobo.clone();
+copiaHombreLobo.NameHombreLobo("Lupin 2");
+copiaHombreLobo.LlamaEnemigo();

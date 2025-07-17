@@ -8,6 +8,7 @@ namespace Codigo_Limpio.EjemploPrototype1.prototipo1
 {
     public  interface IenemigoClone
     {
+       
         object clone();
     }
 }
