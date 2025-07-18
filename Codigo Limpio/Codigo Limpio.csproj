@@ -11,7 +11,6 @@
   <ItemGroup>
     <Folder Include="Patrones Creacionales\FactoryMethod\Ejercicio2\Implementaciones\" />
     <Folder Include="Prototype\Ejemplo1\clones\" />
-    <Folder Include="Prototype\Ejemplo2\" />
   </ItemGroup>
 
 </Project>

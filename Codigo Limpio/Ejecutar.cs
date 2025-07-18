@@ -8,7 +8,7 @@ using Codigo_Limpio.AbstracFactory.Ejercicio3;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.Fabrica;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.implementaciones;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.PaimentServices;
-using Codigo_Limpio.EjemploPrototype1.Clonables.Modelos;
+using Codigo_Limpio.Ejemplo3.prototypos;
 using Codigo_Limpio.FactoryMethod;
 using Codigo_Limpio.FactoryMethod.Ejercicio1;
 using Codigo_Limpio.FactoryMethod.Ejercicio1.implementacion;
@@ -20,7 +20,9 @@ using Codigo_Limpio.PatronBuilder;
 using Codigo_Limpio.PatronBuilder.ejecicio;
 using Codigo_Limpio.PatronBuilder.ejercicio2;
 using Codigo_Limpio.Prototype.Ejemplo1;
+using Codigo_Limpio.Prototype.Ejemplo2.EjemploPrototype1.Clonables.Modelos;
 using System.Xml.Linq;
+using HombreLobo = Codigo_Limpio.Prototype.Ejemplo2.EjemploPrototype1.Clonables.Modelos.HombreLobo;
 
 //IModelo modelo = new Plano();
 //CasaCampoEconomica casa = new (modelo);
@@ -227,3 +229,18 @@ Console.WriteLine("Prueba Facorty Method2 ___________Copia______________________
 HombreLobo copiaHombreLobo = (HombreLobo)hombreLobo.clone();
 copiaHombreLobo.NameHombreLobo("Lupin 2");
 copiaHombreLobo.LlamaEnemigo();
+Console.WriteLine("Prueba Facorty Method2 ___________Simplificar____________________________");
+
+vampiro vampir2 = new vampiro();
+vampir2.Id = 1;
+
+vampir2.atacar();
+
+vampiro vampiro3 = (vampiro) vampir2.clonar();
+vampiro3.Id = 2;
+vampiro3.atacar();
+
+
+Console.WriteLine(vampiro3.Id);
+Console.WriteLine(vampir2.Id);
+

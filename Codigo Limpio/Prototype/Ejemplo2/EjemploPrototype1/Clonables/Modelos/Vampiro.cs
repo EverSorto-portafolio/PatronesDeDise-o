@@ -1,4 +1,4 @@
-﻿using Codigo_Limpio.EjemploPrototype1.prototipo1;
+﻿using Codigo_Limpio.Prototype.Ejemplo2.EjemploPrototype1.prototipo1;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.EjemploPrototype1.Clonables.Modelos
+namespace Codigo_Limpio.Prototype.Ejemplo2.EjemploPrototype1.Clonables.Modelos
 {
     public class Vampiro : ClonarEnemigos
     {
@@ -18,7 +18,8 @@ namespace Codigo_Limpio.EjemploPrototype1.Clonables.Modelos
         public Vampiro()
         {
         }
-        public void vida(decimal puntos) {
+        public void vida(decimal puntos)
+        {
             puntosDevida = puntos;
         }
         public void Istransformation(bool isTransform)
@@ -33,7 +34,7 @@ namespace Codigo_Limpio.EjemploPrototype1.Clonables.Modelos
 
         public override void LlamaEnemigo()
         {
-            Console.WriteLine($"Propiedades nombre : {Name} , puntos de vida {puntosDevida}, se puedetrans formar { isTransform}");
+            Console.WriteLine($"Propiedades nombre : {Name} , puntos de vida {puntosDevida}, se puedetrans formar {isTransform}");
         }
     }
 }

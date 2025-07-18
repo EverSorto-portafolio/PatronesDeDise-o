@@ -1,11 +1,11 @@
-﻿using Codigo_Limpio.EjemploPrototype1.prototipo1;
+﻿using Codigo_Limpio.Prototype.Ejemplo2.EjemploPrototype1.prototipo1;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.EjemploPrototype1.Clonables.Modelos
+namespace Codigo_Limpio.Prototype.Ejemplo2.EjemploPrototype1.Clonables.Modelos
 {
     public class HombreLobo : ClonarEnemigos
     {
@@ -24,11 +24,11 @@ namespace Codigo_Limpio.EjemploPrototype1.Clonables.Modelos
         }
         public void DevilidadHombreLobo(string devilidad)
         {
-            this.Devilidad = devilidad;
+            Devilidad = devilidad;
         }
         public void AtaqueHombreLobo(string ataque)
         {
-            this.Ataque = ataque;
+            Ataque = ataque;
         }
         public void isTransformacion(bool isTransform)
         {
@@ -43,13 +43,13 @@ namespace Codigo_Limpio.EjemploPrototype1.Clonables.Modelos
 
         public override void LlamaEnemigo()
         {
-             Console.WriteLine(
-                 $"Propiedades nombre : {Name} , " +
-                 $"luna llena {lunaLlena}, " +
-                 $"debilidad {Devilidad}," +
-                 $" ataque {Ataque}, " +
-                 $"se puede transformar {isTransform} "
-             );
+            Console.WriteLine(
+                $"Propiedades nombre : {Name} , " +
+                $"luna llena {lunaLlena}, " +
+                $"debilidad {Devilidad}," +
+                $" ataque {Ataque}, " +
+                $"se puede transformar {isTransform} "
+            );
         }
     }
 }
