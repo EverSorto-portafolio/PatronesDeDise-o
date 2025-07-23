@@ -8,7 +8,7 @@ using Codigo_Limpio.AbstracFactory.Ejercicio3;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.Fabrica;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.implementaciones;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.PaimentServices;
-using Codigo_Limpio.Ejemplo3.prototypos;
+using Codigo_Limpio.Estructural;
 using Codigo_Limpio.FactoryMethod;
 using Codigo_Limpio.FactoryMethod.Ejercicio1;
 using Codigo_Limpio.FactoryMethod.Ejercicio1.implementacion;
@@ -21,6 +21,7 @@ using Codigo_Limpio.PatronBuilder.ejecicio;
 using Codigo_Limpio.PatronBuilder.ejercicio2;
 using Codigo_Limpio.Prototype.Ejemplo1;
 using Codigo_Limpio.Prototype.Ejemplo2.EjemploPrototype1.Clonables.Modelos;
+using Codigo_Limpio.Prototype.Ejemplo3.prototypos;
 using System.Xml.Linq;
 using HombreLobo = Codigo_Limpio.Prototype.Ejemplo2.EjemploPrototype1.Clonables.Modelos.HombreLobo;
 
@@ -244,3 +245,13 @@ vampiro3.atacar();
 Console.WriteLine(vampiro3.Id);
 Console.WriteLine(vampir2.Id);
 
+Console.WriteLine("Prueba Facorty Method2 ___________Adapter____________________________");
+Conversar conversar = new Conversar();
+English english = new English();
+
+conversar.iniciar(english, "What is your name?", "My name is John.");
+
+Epanish espanish = new Epanish();
+
+traductor traductor = new traductor(espanish);
+conversar.iniciar(traductor, "¿Cuál es tu nombre?", "Mi nombre es Juan.");
