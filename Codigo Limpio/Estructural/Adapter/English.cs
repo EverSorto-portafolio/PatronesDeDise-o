@@ -4,17 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.Estructural
+namespace Codigo_Limpio.Estructural.Adapter
 {
-    public class Epanish
+    public class English : AdapterInterface
     {
         public string Answer(string respuesta)
         {
-            return $"Respuesta en Español: {respuesta}";
+            return $"Answer in English: {respuesta}";
         }
+
         public string Ask(string pregunta)
         {
-            return $"Pregunta en Español: {pregunta}";
+            return $"Ask in English: {pregunta}";
         }
     }
 }

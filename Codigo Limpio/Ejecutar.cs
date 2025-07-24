@@ -8,7 +8,11 @@ using Codigo_Limpio.AbstracFactory.Ejercicio3;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.Fabrica;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.implementaciones;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.PaimentServices;
-using Codigo_Limpio.Estructural;
+using Codigo_Limpio.Estructural.Adapter;
+using Codigo_Limpio.Estructural.Adapter.Ejercicio1;
+using Codigo_Limpio.Estructural.Adapter.Ejercicio1.Database;
+using Codigo_Limpio.Estructural.Adapter.Ejercicio1.Intermediario;
+using Codigo_Limpio.Estructural.ejercicio2;
 using Codigo_Limpio.FactoryMethod;
 using Codigo_Limpio.FactoryMethod.Ejercicio1;
 using Codigo_Limpio.FactoryMethod.Ejercicio1.implementacion;
@@ -255,3 +259,24 @@ Epanish espanish = new Epanish();
 
 traductor traductor = new traductor(espanish);
 conversar.iniciar(traductor, "¿Cuál es tu nombre?", "Mi nombre es Juan.");
+
+Console.WriteLine("Prueba Facorty Method2 ___________Adapter____________________________");
+Modeloos modeloos = new Modeloos();
+modeloos.Id = 3;
+SQLserver sqlserver = new SQLserver(modeloos);
+SQLServer_Mysql sqlServerMysql = new SQLServer_Mysql(sqlserver);
+sqlServerMysql.Consultar("SELECT * FROM Usuarios");
+Console.WriteLine("Respuesta de SQLServer: " + sqlServerMysql.Respuesta());
+Console.WriteLine("Prueba Facorty Method2 ___________Adapter____________________________");
+
+IDATABASE database = new DataAdapterSQL();
+Conversion conversion = new Conversion();
+conversion.add(database, "Mensaje de prueba");
+conversion.retrive(database);
+
+Console.WriteLine("Prueba Facorty Method2 ___________Adapter____________________________");
+
+database = new NewSystem(new LegasyDatabase());
+conversion.add(database, "Mensaje de prueba en el nuevo sistema");
+string data = conversion.retrive(database);
+

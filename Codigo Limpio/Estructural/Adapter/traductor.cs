@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.Estructural
+namespace Codigo_Limpio.Estructural.Adapter
 {
-    public  class traductor : AdapterInterface
+    public class traductor : AdapterInterface
     {
         private readonly Epanish _espanol;
 
@@ -17,7 +17,7 @@ namespace Codigo_Limpio.Estructural
 
         public string Answer(string respuesta)
         {
-           return _espanol.Answer(respuesta);
+            return _espanol.Answer(respuesta);
         }
 
         public string Ask(string pregunta)
