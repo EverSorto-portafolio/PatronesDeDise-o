@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.Estructural.ejercicio2
+namespace Codigo_Limpio.Estructural.Adapter.ejercicio2
 {
     public class LegasyDatabase
     {

@@ -8,11 +8,13 @@ using Codigo_Limpio.AbstracFactory.Ejercicio3;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.Fabrica;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.implementaciones;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.PaimentServices;
+using Codigo_Limpio.Ejercicio3;
 using Codigo_Limpio.Estructural.Adapter;
 using Codigo_Limpio.Estructural.Adapter.Ejercicio1;
 using Codigo_Limpio.Estructural.Adapter.Ejercicio1.Database;
 using Codigo_Limpio.Estructural.Adapter.Ejercicio1.Intermediario;
-using Codigo_Limpio.Estructural.ejercicio2;
+using Codigo_Limpio.Estructural.Adapter.ejercicio2;
+
 using Codigo_Limpio.FactoryMethod;
 using Codigo_Limpio.FactoryMethod.Ejercicio1;
 using Codigo_Limpio.FactoryMethod.Ejercicio1.implementacion;
@@ -280,3 +282,10 @@ database = new NewSystem(new LegasyDatabase());
 conversion.add(database, "Mensaje de prueba en el nuevo sistema");
 string data = conversion.retrive(database);
 
+Console.WriteLine("Prueba Facorty Method2 ___________inyeccion Adapter____________________________");
+ClaSeLegada claSeLegada = new ClaSeLegada();
+InyectAdapter inyectAdapter = new InyectAdapter(claSeLegada);
+
+UsarDB usarDB = new UsarDB(inyectAdapter);
+usarDB.Guardar();
+usarDB.Eliminar();
