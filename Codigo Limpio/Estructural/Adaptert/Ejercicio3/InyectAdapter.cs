@@ -4,18 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.Ejercicio3
+namespace Codigo_Limpio.Estructural.Adaptert.Ejercicio3
 {
     public class InyectAdapter : IDB
     {
         private readonly ClaSeLegada _claSeLegada;
-        public InyectAdapter( ClaSeLegada cl)
+        public InyectAdapter(ClaSeLegada cl)
         {
             _claSeLegada = cl;
         }
         public void eliminar()
         {
-           _claSeLegada.Eliminar();
+            _claSeLegada.Eliminar();
         }
 
         public void guardar()

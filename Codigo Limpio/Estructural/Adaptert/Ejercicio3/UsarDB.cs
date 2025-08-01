@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.Ejercicio3
+namespace Codigo_Limpio.Estructural.Adaptert.Ejercicio3
 {
-    public class UsarDB 
+    public class UsarDB
     {
         private readonly IDB _db;
         public UsarDB(IDB db)

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.Ejercicio3
+namespace Codigo_Limpio.Estructural.Adaptert.Ejercicio3
 {
-    public  class ClaSeLegada
+    public class ClaSeLegada
     {
         public void Guardar()
         {
@@ -14,7 +14,7 @@ namespace Codigo_Limpio.Ejercicio3
         }
         public void Eliminar()
         {
-           
+
             Console.WriteLine("Delete desdela clase legada");
         }
     }

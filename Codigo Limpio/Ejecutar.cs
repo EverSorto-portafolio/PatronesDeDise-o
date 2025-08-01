@@ -8,13 +8,21 @@ using Codigo_Limpio.AbstracFactory.Ejercicio3;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.Fabrica;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.implementaciones;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.PaimentServices;
-using Codigo_Limpio.Ejercicio3;
+
+using Codigo_Limpio.Bridge.ejercicio2;
+using Codigo_Limpio.Bridge.ejercicio2.ClaseAbstracta;
+using Codigo_Limpio.Bridge.ejercicio2.Implementador;
+
+using Codigo_Limpio.Bridge.implementacionDelPatron.ejecutor;
+using Codigo_Limpio.Bridge.implementacionDelPatron.ejemplo1;
+using Codigo_Limpio.Bridge.implementacionDelPatron.Implementacion;
+using Codigo_Limpio.Bridge.implementacionDelPatron.refinador;
 using Codigo_Limpio.Estructural.Adapter;
 using Codigo_Limpio.Estructural.Adapter.Ejercicio1;
 using Codigo_Limpio.Estructural.Adapter.Ejercicio1.Database;
 using Codigo_Limpio.Estructural.Adapter.Ejercicio1.Intermediario;
 using Codigo_Limpio.Estructural.Adapter.ejercicio2;
-
+using Codigo_Limpio.Estructural.Adaptert.Ejercicio3;
 using Codigo_Limpio.FactoryMethod;
 using Codigo_Limpio.FactoryMethod.Ejercicio1;
 using Codigo_Limpio.FactoryMethod.Ejercicio1.implementacion;
@@ -289,3 +297,17 @@ InyectAdapter inyectAdapter = new InyectAdapter(claSeLegada);
 UsarDB usarDB = new UsarDB(inyectAdapter);
 usarDB.Guardar();
 usarDB.Eliminar();
+
+Console.WriteLine("Prueba Facorty Method2 ___________Bridge____________________________");
+Iformat mp3 = new MP3();
+MusicPlayer Reprodutor = new Escritorio(mp3);
+Reprodutor.play("cancion.mp3");
+
+Iformat mp4 = new MP4();
+Reprodutor = new ReproductorAndroid(mp4);
+Reprodutor.play("video.mp4");
+
+Console.WriteLine("Prueba Facorty Method2 ___________Bridge Ejemplo 2____________________________");
+IAuto auto = new combustionInterfa();
+TipoAutomovil electrico = new Bocho(auto);
+electrico.EstadoAuto();

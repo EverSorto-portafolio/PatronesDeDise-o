@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.Estructural.Adaptert.Ejercicio3
+namespace Codigo_Limpio.Bridge.implementacionDelPatron.ejemplo1
 {
-    public interface IDB
+    public interface Iformat
     {
-        void guardar();
-        void eliminar();
+        void play(string fillepath);
     }
 }
