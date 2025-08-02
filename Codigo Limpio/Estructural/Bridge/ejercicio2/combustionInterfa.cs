@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.Bridge.ejercicio2
+namespace Codigo_Limpio.Estructural.Bridge.ejercicio2
 {
     public class combustionInterfa : IAuto
     {
         public void Acelerar()
         {
-            Console.WriteLine("el auto de combustion interna arranca"); 
+            Console.WriteLine("el auto de combustion interna arranca");
         }
 
         public void Apagar()

@@ -1,11 +1,11 @@
-﻿using Codigo_Limpio.Bridge.implementacionDelPatron.ejemplo1;
+﻿using Codigo_Limpio.Estructural.Bridge.implementacionDelPatron.ejemplo1;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.Bridge.implementacionDelPatron.Implementacion
+namespace Codigo_Limpio.Estructural.Bridge.implementacionDelPatron.Implementacion
 {
     internal class WAV : Iformat
     {

@@ -1,12 +1,12 @@
-﻿using Codigo_Limpio.Bridge.implementacionDelPatron.ejemplo1;
-using Codigo_Limpio.Bridge.implementacionDelPatron.refinador;
+﻿using Codigo_Limpio.Estructural.Bridge.implementacionDelPatron.ejemplo1;
+using Codigo_Limpio.Estructural.Bridge.implementacionDelPatron.refinador;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.Bridge.implementacionDelPatron.ejecutor
+namespace Codigo_Limpio.Estructural.Bridge.implementacionDelPatron.ejecutor
 {
     public class Escritorio : MusicPlayer
     {

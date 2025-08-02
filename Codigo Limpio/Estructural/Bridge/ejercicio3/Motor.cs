@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.Bridge.implementacionDelPatron.ejemplo1
+namespace Codigo_Limpio.Estructural.Bridge.ejercicio3
 {
-    public interface Iformat
+    public interface Motor
     {
-        void play(string fillepath);
+        void start();
+        void stop();
     }
 }

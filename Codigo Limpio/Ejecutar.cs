@@ -8,21 +8,22 @@ using Codigo_Limpio.AbstracFactory.Ejercicio3;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.Fabrica;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.implementaciones;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.PaimentServices;
-
-using Codigo_Limpio.Bridge.ejercicio2;
-using Codigo_Limpio.Bridge.ejercicio2.ClaseAbstracta;
 using Codigo_Limpio.Bridge.ejercicio2.Implementador;
-
+using Codigo_Limpio.Bridge.ejercicio3.ImplementacionesMotor;
 using Codigo_Limpio.Bridge.implementacionDelPatron.ejecutor;
-using Codigo_Limpio.Bridge.implementacionDelPatron.ejemplo1;
 using Codigo_Limpio.Bridge.implementacionDelPatron.Implementacion;
-using Codigo_Limpio.Bridge.implementacionDelPatron.refinador;
 using Codigo_Limpio.Estructural.Adapter;
 using Codigo_Limpio.Estructural.Adapter.Ejercicio1;
 using Codigo_Limpio.Estructural.Adapter.Ejercicio1.Database;
 using Codigo_Limpio.Estructural.Adapter.Ejercicio1.Intermediario;
 using Codigo_Limpio.Estructural.Adapter.ejercicio2;
 using Codigo_Limpio.Estructural.Adaptert.Ejercicio3;
+using Codigo_Limpio.Estructural.Bridge.ejercicio2;
+using Codigo_Limpio.Estructural.Bridge.ejercicio2.ClaseAbstracta;
+using Codigo_Limpio.Estructural.Bridge.ejercicio3;
+using Codigo_Limpio.Estructural.Bridge.ejercicio3.refinador;
+using Codigo_Limpio.Estructural.Bridge.implementacionDelPatron.ejemplo1;
+using Codigo_Limpio.Estructural.Bridge.implementacionDelPatron.refinador;
 using Codigo_Limpio.FactoryMethod;
 using Codigo_Limpio.FactoryMethod.Ejercicio1;
 using Codigo_Limpio.FactoryMethod.Ejercicio1.implementacion;
@@ -311,3 +312,17 @@ Console.WriteLine("Prueba Facorty Method2 ___________Bridge Ejemplo 2___________
 IAuto auto = new combustionInterfa();
 TipoAutomovil electrico = new Bocho(auto);
 electrico.EstadoAuto();
+
+Console.WriteLine("Prueba Facorty Method2 ___________Bridge Ejemplo 3____________________________");
+Motor motor = new MotorACombustion();
+AvionDeCasaApacheR32 avion = new AvionDeCasaApacheR32(motor);
+avion.EstadoMotor();
+
+motor = new MotorElectrico();
+AvionDeCasaApacheR32 avionElectrico = new AvionDeCasaApacheR32(motor);
+avionElectrico.EstadoMotor();
+
+
+
+
+
