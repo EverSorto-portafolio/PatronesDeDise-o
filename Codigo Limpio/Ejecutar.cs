@@ -1,17 +1,8 @@
 ﻿using Codigo_Limpio.AbstracFactory.AFEjemplo1;
 using Codigo_Limpio.AbstracFactory.AFEjemplo1.Factory;
-using Codigo_Limpio.AbstracFactory.Ejemplo2;
-using Codigo_Limpio.AbstracFactory.Ejemplo2._2;
-using Codigo_Limpio.AbstracFactory.Ejemplo2._2.InterfazPago;
-using Codigo_Limpio.AbstracFactory.Ejemplo2._2.LaFactoria;
-using Codigo_Limpio.AbstracFactory.Ejercicio3;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.Fabrica;
-using Codigo_Limpio.AbstracFactory.Ejercicio3.implementaciones;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.PaimentServices;
-using Codigo_Limpio.Bridge.ejercicio2.Implementador;
-using Codigo_Limpio.Bridge.ejercicio3.ImplementacionesMotor;
-using Codigo_Limpio.Bridge.implementacionDelPatron.ejecutor;
-using Codigo_Limpio.Bridge.implementacionDelPatron.Implementacion;
+using Codigo_Limpio.Composite.Ejemplo1Composite;
 using Codigo_Limpio.Estructural.Adapter;
 using Codigo_Limpio.Estructural.Adapter.Ejercicio1;
 using Codigo_Limpio.Estructural.Adapter.Ejercicio1.Database;
@@ -20,24 +11,23 @@ using Codigo_Limpio.Estructural.Adapter.ejercicio2;
 using Codigo_Limpio.Estructural.Adaptert.Ejercicio3;
 using Codigo_Limpio.Estructural.Bridge.ejercicio2;
 using Codigo_Limpio.Estructural.Bridge.ejercicio2.ClaseAbstracta;
+using Codigo_Limpio.Estructural.Bridge.ejercicio2.Implementador;
 using Codigo_Limpio.Estructural.Bridge.ejercicio3;
+using Codigo_Limpio.Estructural.Bridge.ejercicio3.ImplementacionesMotor;
 using Codigo_Limpio.Estructural.Bridge.ejercicio3.refinador;
+using Codigo_Limpio.Estructural.Bridge.implementacionDelPatron.ejecutor;
 using Codigo_Limpio.Estructural.Bridge.implementacionDelPatron.ejemplo1;
+using Codigo_Limpio.Estructural.Bridge.implementacionDelPatron.Implementacion;
 using Codigo_Limpio.Estructural.Bridge.implementacionDelPatron.refinador;
 using Codigo_Limpio.FactoryMethod;
 using Codigo_Limpio.FactoryMethod.Ejercicio1;
 using Codigo_Limpio.FactoryMethod.Ejercicio1.implementacion;
-using Codigo_Limpio.FactoryMethod.Ejercicio1.interfaz;
 using Codigo_Limpio.FactoryMethod.Ejercicio2.Producto;
 using Codigo_Limpio.FactoryMethod.Factories;
 using Codigo_Limpio.FactoryMethod.Producto.Factory;
-using Codigo_Limpio.PatronBuilder;
-using Codigo_Limpio.PatronBuilder.ejecicio;
 using Codigo_Limpio.PatronBuilder.ejercicio2;
 using Codigo_Limpio.Prototype.Ejemplo1;
-using Codigo_Limpio.Prototype.Ejemplo2.EjemploPrototype1.Clonables.Modelos;
 using Codigo_Limpio.Prototype.Ejemplo3.prototypos;
-using System.Xml.Linq;
 using HombreLobo = Codigo_Limpio.Prototype.Ejemplo2.EjemploPrototype1.Clonables.Modelos.HombreLobo;
 
 //IModelo modelo = new Plano();
@@ -123,7 +113,7 @@ Console.WriteLine("-------------------------------------------------------------
 
 //if (!resultado)
 //{
-//    Console.WriteLine("Usuario o  contraseña no validos");
+//    Console.WriteLine("Usuario o  contraseña no validos");1
     
     
 //    resultado = verificar.ValidarPass(user);
@@ -322,7 +312,29 @@ motor = new MotorElectrico();
 AvionDeCasaApacheR32 avionElectrico = new AvionDeCasaApacheR32(motor);
 avionElectrico.EstadoMotor();
 
+Console.WriteLine("Prueba Facorty Method2 ___________Composite____________________________");
 
+var file1 = new AppFile("file10.txt");
+var file2 = new AppFile("file11.txt");
+var file3 = new AppFile("file12.txt");
+var file4 = new AppFile("file13.txt");
+var file5 = new AppFile("file14.txt");
+var file6 = new AppFile("file15.txt");
+var file7 = new AppFile("file16.txt");
 
+var folder1 = new Folder("folder1");
 
+folder1.Item(file1);
+folder1.Item(file6);
+folder1.Item(file7);
 
+var folder2 = new Folder("folder2");
+folder1.Item(file2);
+folder1.Item(file3);
+folder2.Item(file4);
+folder2.Item(file5);
+
+var folder4 = new Folder("root");
+folder4.Item(folder1);
+folder4.Item(folder2);
+folder4.Display();
