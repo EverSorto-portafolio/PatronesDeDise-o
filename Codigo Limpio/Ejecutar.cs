@@ -3,6 +3,8 @@ using Codigo_Limpio.AbstracFactory.AFEjemplo1.Factory;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.Fabrica;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.PaimentServices;
 using Codigo_Limpio.Composite.Ejemplo1Composite;
+using Codigo_Limpio.Composite.Ejercicio2Composite;
+using Codigo_Limpio.Composite.Ejercicio3;
 using Codigo_Limpio.Estructural.Adapter;
 using Codigo_Limpio.Estructural.Adapter.Ejercicio1;
 using Codigo_Limpio.Estructural.Adapter.Ejercicio1.Database;
@@ -338,3 +340,44 @@ var folder4 = new Folder("root");
 folder4.Item(folder1);
 folder4.Item(folder2);
 folder4.Display();
+Console.WriteLine("Prueba Facorty Method2 ___________Composite1____________________________");
+var empleado1 = new Empleado("Juan");
+var empleado2 = new Empleado("Maria");
+var empleado3 = new Empleado("Pedro");
+var empleado4 = new Empleado("Ana");
+var empleado5 = new Empleado("Luis");
+
+var jefe1 = new Jefe("Carlos");
+jefe1.agregarSubordinado(empleado1);
+jefe1.agregarSubordinado(empleado2);
+jefe1.agregarSubordinado(empleado3);
+jefe1.recorrer();
+
+Console.WriteLine("Prueba Facorty Method2 ___________Composite2____________________________");
+// agregamos el casador
+ICasador casador = new CasadorNovato();
+casador.Nombre("Juan-winguo");
+casador.Codigo("Gan-Gan-Style");
+casador.Rango("GT");
+
+
+ICasador casador1 = new CasadorNovato();
+casador1.Nombre("Juan-DounZu");
+casador1.Codigo("SexyTres");
+casador1.Rango("AF");
+
+
+ICasador casador2 = new CasadorNovato();
+casador2.Nombre("Soon-winguo");
+casador2.Codigo("Gan-Gan-Style");
+casador2.Rango("Monarca de las sombras ");
+
+
+var Director = new RangoS();
+Director.Nombre("Director");
+Director.Codigo("Director-001");
+Director.Rango("Director de la caceria");
+Director.AgregarCasador(casador);
+Director.AgregarCasador(casador2);
+Director.AgregarCasador(casador1);
+Director.Recorrer();
