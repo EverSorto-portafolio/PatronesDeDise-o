@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.Composite.Ejercicio3
+namespace Codigo_Limpio.Estructural.Composite.Ejercicio3
 {
-    public  interface ICasador
+    public interface ICasador
     {
 
         void Rango(string rango);

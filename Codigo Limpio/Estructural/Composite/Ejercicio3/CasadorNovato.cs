@@ -4,23 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.Composite.Ejercicio3
+namespace Codigo_Limpio.Estructural.Composite.Ejercicio3
 {
-    internal class RangoS : ICasador
+    public class CasadorNovato : ICasador
     {
         private string _nombre;
         private string _codigo;
         private string _rango;
 
-        private List<ICasador> _casadores;
-
-        public RangoS()
+        public CasadorNovato()
         {
             _nombre = "";
             _codigo = "";
             _rango = "";
-            _casadores = new List<ICasador>();
         }
+
         public void Rango(string rango)
         {
             _rango = rango;
@@ -31,26 +29,17 @@ namespace Codigo_Limpio.Composite.Ejercicio3
             _nombre = nombre;
         }
 
+
         public void Codigo(string codigo)
         {
             _codigo = codigo;
         }
 
-        public void  Mostrar()
+
+        public void Mostrar()
         {
-            Console.WriteLine($"Casador Novato: {_nombre}, Codigo: {_codigo}, Rango: {_rango}  fuente "); 
+            Console.WriteLine($"Casador Novato: {_nombre}, Codigo: {_codigo}, Rango: {_rango}");
         }
 
-        public void AgregarCasador(ICasador casador)
-        {
-            _casadores.Add(casador);
-        }
-        public void Recorrer() {
-            Mostrar();
-
-            foreach ( var item in _casadores  ) {
-               item.Mostrar();
-            }
-        }
     }
 }

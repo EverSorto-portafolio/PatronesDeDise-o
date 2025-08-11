@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.Composite.Ejemplo1Composite
+namespace Codigo_Limpio.Estructural.Composite.Ejemplo1Composite
 {
     public class AppFile : IfileSistem
     {
@@ -17,7 +17,7 @@ namespace Codigo_Limpio.Composite.Ejemplo1Composite
         public void Display(string indent = "")
         {
             Console.WriteLine($"{indent} " +
-                $"- { this.GetType().Name} :" +
+                $"- {GetType().Name} :" +
                 $" {_name}");
         }
     }

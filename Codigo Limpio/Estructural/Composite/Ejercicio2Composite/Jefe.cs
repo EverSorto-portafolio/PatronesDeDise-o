@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.Composite.Ejercicio2Composite
+namespace Codigo_Limpio.Estructural.Composite.Ejercicio2Composite
 {
     public class Jefe : IJerarquia
     {
@@ -25,10 +25,11 @@ namespace Codigo_Limpio.Composite.Ejercicio2Composite
 
         public void mostrar()
         {
-            Console.WriteLine($" El trabaajor es {_nombre} de tipo {this.GetType()}");
+            Console.WriteLine($" El trabaajor es {_nombre} de tipo {GetType()}");
         }
 
-        public void recorrer() {
+        public void recorrer()
+        {
             foreach (var subordinado in _subordinados)
             {
                 subordinado.mostrar();

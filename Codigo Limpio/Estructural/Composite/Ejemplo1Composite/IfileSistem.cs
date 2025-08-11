@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.Composite.Ejemplo1Composite
+namespace Codigo_Limpio.Estructural.Composite.Ejemplo1Composite
 {
-    public  interface IfileSistem
+    public interface IfileSistem
     {
         void Display(string indent = "");
     }

@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.Composite.Ejercicio2Composite
+namespace Codigo_Limpio.Estructural.Wrapper
 {
-    public  interface IJerarquia
+    public  interface ICafe
     {
-       
-        public void mostrar();
-
+        string GetDescription();
+        double GetCost();
     }
 }
