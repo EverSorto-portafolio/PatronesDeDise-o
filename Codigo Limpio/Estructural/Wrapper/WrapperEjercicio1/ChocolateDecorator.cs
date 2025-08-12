@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.Estructural.Wrapper
+namespace Codigo_Limpio.Estructural.Wrapper.WrapperEjercicio1
 {
     public class ChocolateDecorator : DecoradorCafe
     {
@@ -13,7 +13,7 @@ namespace Codigo_Limpio.Estructural.Wrapper
         }
         public override string GetDescription()
         {
-            return _cafe.GetDescription +", Chocolate";
+            return _cafe.GetDescription + ", Chocolate";
         }
         public override double GetCost()
         {

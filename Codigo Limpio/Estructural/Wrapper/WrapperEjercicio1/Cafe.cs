@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.Estructural.Wrapper
+namespace Codigo_Limpio.Estructural.Wrapper.WrapperEjercicio1
 {
-    public  class Cafe : ICafe
+    public class Cafe : ICafe
     {
         public string GetDescription()
         {

@@ -1,8 +1,6 @@
-﻿
-
-namespace Codigo_Limpio.Estructural.Wrapper
+﻿namespace Codigo_Limpio.Estructural.Wrapper.WrapperEjercicio1
 {
-    public  abstract class DecoradorCafe : ICafe
+    public abstract class DecoradorCafe : ICafe
     {
         protected ICafe _cafe;
         protected DecoradorCafe(ICafe cafe)
