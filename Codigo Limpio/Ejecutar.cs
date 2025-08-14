@@ -30,6 +30,7 @@ using Codigo_Limpio.FactoryMethod.Ejercicio1.implementacion;
 using Codigo_Limpio.FactoryMethod.Ejercicio2.Producto;
 using Codigo_Limpio.FactoryMethod.Factories;
 using Codigo_Limpio.FactoryMethod.Producto.Factory;
+using Codigo_Limpio.NewFacade;
 using Codigo_Limpio.PatronBuilder.ejercicio2;
 using Codigo_Limpio.Prototype.Ejemplo1;
 using Codigo_Limpio.Prototype.Ejemplo3.prototypos;
@@ -400,3 +401,13 @@ burger = new DobleCarne(burger);
 Console.WriteLine($"{burger.Descripcion()} : ${burger.Costo()}");
 burger = new Queso(burger);
 Console.WriteLine($"{burger.Descripcion()} : ${burger.Costo()}");
+//----------------------------------------------------------------------------
+Console.WriteLine("Prueba Facorty Method2 ___________Decorator____________________________");
+
+DvDPlayer dvDPlayer = new DvDPlayer();
+sonido sonido = new sonido();
+Proyector proyector = new Proyector();
+
+FachadaMovie facha = new FachadaMovie(dvDPlayer, sonido, proyector);
+facha.ReproducirPelicula("Inception");
+facha.DetenerPelicula();

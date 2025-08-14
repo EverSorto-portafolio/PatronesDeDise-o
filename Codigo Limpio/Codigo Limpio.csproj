@@ -9,6 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Facade\**" />
+    <EmbeddedResource Remove="Facade\**" />
+    <None Remove="Facade\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Patrones Creacionales\FactoryMethod\Ejercicio2\Implementaciones\" />
     <Folder Include="Patrones Creacionales\Prototype\Ejemplo1\clones\" />
   </ItemGroup>
