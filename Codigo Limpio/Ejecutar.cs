@@ -31,6 +31,7 @@ using Codigo_Limpio.FactoryMethod.Ejercicio2.Producto;
 using Codigo_Limpio.FactoryMethod.Factories;
 using Codigo_Limpio.FactoryMethod.Producto.Factory;
 using Codigo_Limpio.NewFacade;
+using Codigo_Limpio.NewFacade.ejemplo2;
 using Codigo_Limpio.PatronBuilder.ejercicio2;
 using Codigo_Limpio.Prototype.Ejemplo1;
 using Codigo_Limpio.Prototype.Ejemplo3.prototypos;
@@ -411,3 +412,22 @@ Proyector proyector = new Proyector();
 FachadaMovie facha = new FachadaMovie(dvDPlayer, sonido, proyector);
 facha.ReproducirPelicula("Inception");
 facha.DetenerPelicula();
+
+Console.WriteLine("Prueba Facorty Method2 ___________Decorator____________________________");
+
+Dictionary<string, string> diccionario = new Dictionary<string, string>();
+
+diccionario.Add("hotel", "El mismisimo Decameron");
+diccionario.Add("vuelo", "Vuelo a Acajutla");
+diccionario.Add("auto", "Renta de auto en Acajutla");
+
+viajeFacade viaje = new viajeFacade(diccionario);
+
+Vuelo vuelo = new Vuelo();
+Hotel hotel = new Hotel();
+RentaCar rentaCar = new RentaCar();
+
+viaje.rentaCar(rentaCar);
+viaje.hotel(hotel);
+viaje.vuelo(vuelo);
+viaje.planearViaje();
