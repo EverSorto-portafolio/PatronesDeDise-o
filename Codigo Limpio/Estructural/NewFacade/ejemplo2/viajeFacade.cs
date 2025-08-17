@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.NewFacade.ejemplo2
+namespace Codigo_Limpio.Estructural.NewFacade.ejemplo2
 {
     public class viajeFacade
     {
@@ -12,11 +12,12 @@ namespace Codigo_Limpio.NewFacade.ejemplo2
         private Vuelo _vuelo;
         private RentaCar _rentaCar;
         private Dictionary<string, string> _plan;
-        public viajeFacade( Dictionary<string, string> plan)
+        public viajeFacade(Dictionary<string, string> plan)
         {
             _plan = plan;
         }
-        public void hotel(Hotel hotel) {
+        public void hotel(Hotel hotel)
+        {
             _hotel = hotel;
         }
         public void vuelo(Vuelo vuelo)
@@ -27,12 +28,13 @@ namespace Codigo_Limpio.NewFacade.ejemplo2
         {
             _rentaCar = rentaCar;
         }
-        public void planearViaje() {
+        public void planearViaje()
+        {
             _hotel.reservarHabitacion(_plan["hotel"]);
             _vuelo.reservarVuelo(_plan["vuelo"]);
             _rentaCar.RentarAuto(_plan["auto"]);
         }
-        
+
 
     }
 }

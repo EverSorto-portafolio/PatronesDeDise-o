@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.NewFacade.ejemplo2
+namespace Codigo_Limpio.Estructural.NewFacade.ejemplo2
 {
-    public  class Hotel
+    public class Hotel
     {
         public void reservarHabitacion(string descripcion)
         {
-            Console.WriteLine($"Habitación reservada: {descripcion}"); 
+            Console.WriteLine($"Habitación reservada: {descripcion}");
         }
         public string cancelarReserva(string descripcion)
         {

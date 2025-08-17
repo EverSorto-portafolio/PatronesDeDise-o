@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.NewFacade.ejemplo2
+namespace Codigo_Limpio.Estructural.NewFacade.ejemplo2
 {
     public class RentaCar
     {

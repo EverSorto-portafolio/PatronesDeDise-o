@@ -22,6 +22,8 @@ using Codigo_Limpio.Estructural.Bridge.implementacionDelPatron.refinador;
 using Codigo_Limpio.Estructural.Composite.Ejemplo1Composite;
 using Codigo_Limpio.Estructural.Composite.Ejercicio2Composite;
 using Codigo_Limpio.Estructural.Composite.Ejercicio3;
+using Codigo_Limpio.Estructural.NewFacade;
+using Codigo_Limpio.Estructural.NewFacade.ejemplo2;
 using Codigo_Limpio.Estructural.Wrapper.WrapperEjercicio1;
 using Codigo_Limpio.Estructural.Wrapper.WrapperEjercicio2;
 using Codigo_Limpio.FactoryMethod;
@@ -30,11 +32,10 @@ using Codigo_Limpio.FactoryMethod.Ejercicio1.implementacion;
 using Codigo_Limpio.FactoryMethod.Ejercicio2.Producto;
 using Codigo_Limpio.FactoryMethod.Factories;
 using Codigo_Limpio.FactoryMethod.Producto.Factory;
-using Codigo_Limpio.NewFacade;
-using Codigo_Limpio.NewFacade.ejemplo2;
 using Codigo_Limpio.PatronBuilder.ejercicio2;
 using Codigo_Limpio.Prototype.Ejemplo1;
 using Codigo_Limpio.Prototype.Ejemplo3.prototypos;
+using Codigo_Limpio.Proxy;
 using System.Net.Http.Headers;
 using HombreLobo = Codigo_Limpio.Prototype.Ejemplo2.EjemploPrototype1.Clonables.Modelos.HombreLobo;
 
@@ -431,3 +432,13 @@ viaje.rentaCar(rentaCar);
 viaje.hotel(hotel);
 viaje.vuelo(vuelo);
 viaje.planearViaje();
+Console.WriteLine("Prueba Facorty Method2 ______ Rquipo ");
+
+IBancoCuenta bancoCuenta = new  Cuenta(1000);
+bancoCuenta.Depositar(1000);
+BancoProxy bancoProxy = new BancoProxy(bancoCuenta);
+Console.WriteLine("Saldo inicial: " + bancoProxy.ObtenerSaldo());
+bancoProxy.Retirar(500);
+Console.WriteLine("Saldo después de retirar 500: " + bancoProxy.ObtenerSaldo());
+bancoProxy.Retirar(600); // Esto lanzará una excepción por saldo insuficiente
+
