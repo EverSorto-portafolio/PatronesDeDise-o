@@ -36,6 +36,7 @@ using Codigo_Limpio.PatronBuilder.ejercicio2;
 using Codigo_Limpio.Prototype.Ejemplo1;
 using Codigo_Limpio.Prototype.Ejemplo3.prototypos;
 using Codigo_Limpio.Proxy;
+using Codigo_Limpio.Proxy.Ejercicio1;
 using System.Net.Http.Headers;
 using HombreLobo = Codigo_Limpio.Prototype.Ejemplo2.EjemploPrototype1.Clonables.Modelos.HombreLobo;
 
@@ -442,3 +443,10 @@ bancoProxy.Retirar(500);
 Console.WriteLine("Saldo después de retirar 500: " + bancoProxy.ObtenerSaldo());
 bancoProxy.Retirar(600); // Esto lanzará una excepción por saldo insuficiente
 
+Console.WriteLine("Prueba Facorty Method2 ______ Rquipo ");
+ISegutiryCamara camara = new implmentacionInterfaz("Camara 1");
+Dictionary<string, Object> acceso = new Dictionary<string, Object>();
+acceso.Add("camara", camara);
+acceso.Add("autorizacion", true);
+CamaraProxy camaraProxy = new CamaraProxy(acceso);
+camaraProxy.ValidarAcceso(camaraProxy.ApagarCamara);
