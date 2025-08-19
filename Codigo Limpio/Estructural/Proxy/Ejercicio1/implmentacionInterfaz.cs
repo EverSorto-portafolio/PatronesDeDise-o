@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.Proxy.Ejercicio1
+namespace Codigo_Limpio.Estructural.Proxy.Ejercicio1
 {
-    public  class implmentacionInterfaz : ISegutiryCamara
-        
+    public class implmentacionInterfaz : ISegutiryCamara
+
     {
         private string _hubicaiconCamra;
         public implmentacionInterfaz(string camara)

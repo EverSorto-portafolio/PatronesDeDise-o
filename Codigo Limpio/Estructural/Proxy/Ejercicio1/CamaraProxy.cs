@@ -5,15 +5,15 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.Proxy.Ejercicio1
+namespace Codigo_Limpio.Estructural.Proxy.Ejercicio1
 {
-    public  class CamaraProxy : ISegutiryCamara
+    public class CamaraProxy : ISegutiryCamara
     {
         private ISegutiryCamara _camara;
         private bool _autorizacion;
-        Dictionary<string, Object> _data;
+        Dictionary<string, object> _data;
 
-        public CamaraProxy( Dictionary<string,Object> acceso)
+        public CamaraProxy(Dictionary<string, object> acceso)
         {
             _data = acceso;
             Asignar();
@@ -33,21 +33,23 @@ namespace Codigo_Limpio.Proxy.Ejercicio1
             Console.WriteLine("Encender Camara");
         }
 
-        private void Asignar() {
-            _camara = (ISegutiryCamara) _data["camara"];
+        private void Asignar()
+        {
+            _camara = (ISegutiryCamara)_data["camara"];
             _autorizacion = (bool)_data["autorizacion"];
         }
 
 
-        public  void ValidarAcceso(Action function) {
+        public void ValidarAcceso(Action function)
+        {
 
             if (_autorizacion)
             {
-               function();
+                function();
             }
             else
             {
-                Console.WriteLine ("No tienes permiso para acceder a la camara");
+                Console.WriteLine("No tienes permiso para acceder a la camara");
             }
 
         }

@@ -2,7 +2,7 @@
 using Codigo_Limpio.AbstracFactory.AFEjemplo1.Factory;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.Fabrica;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.PaimentServices;
-
+using Codigo_Limpio.comportamiento.Commend;
 using Codigo_Limpio.Estructural.Adapter;
 using Codigo_Limpio.Estructural.Adapter.Ejercicio1;
 using Codigo_Limpio.Estructural.Adapter.Ejercicio1.Database;
@@ -24,6 +24,8 @@ using Codigo_Limpio.Estructural.Composite.Ejercicio2Composite;
 using Codigo_Limpio.Estructural.Composite.Ejercicio3;
 using Codigo_Limpio.Estructural.NewFacade;
 using Codigo_Limpio.Estructural.NewFacade.ejemplo2;
+using Codigo_Limpio.Estructural.Proxy;
+using Codigo_Limpio.Estructural.Proxy.Ejercicio1;
 using Codigo_Limpio.Estructural.Wrapper.WrapperEjercicio1;
 using Codigo_Limpio.Estructural.Wrapper.WrapperEjercicio2;
 using Codigo_Limpio.FactoryMethod;
@@ -35,9 +37,8 @@ using Codigo_Limpio.FactoryMethod.Producto.Factory;
 using Codigo_Limpio.PatronBuilder.ejercicio2;
 using Codigo_Limpio.Prototype.Ejemplo1;
 using Codigo_Limpio.Prototype.Ejemplo3.prototypos;
-using Codigo_Limpio.Proxy;
-using Codigo_Limpio.Proxy.Ejercicio1;
 using System.Net.Http.Headers;
+using System.Windows.Input;
 using HombreLobo = Codigo_Limpio.Prototype.Ejemplo2.EjemploPrototype1.Clonables.Modelos.HombreLobo;
 
 //IModelo modelo = new Plano();
@@ -450,3 +451,11 @@ acceso.Add("camara", camara);
 acceso.Add("autorizacion", true);
 CamaraProxy camaraProxy = new CamaraProxy(acceso);
 camaraProxy.ValidarAcceso(camaraProxy.ApagarCamara);
+
+Console.WriteLine("Command Patter ______ Rquipo ");
+Order order = new Order();
+Icommand command = new OrdenCommand(order);
+Icommand cancelCommand = new CancerlarOrden(order);
+EjecutarCommand ejecutarCommand = new EjecutarCommand();
+ejecutarCommand.Ejecutar(command);
+ejecutarCommand.Ejecutar(cancelCommand);
