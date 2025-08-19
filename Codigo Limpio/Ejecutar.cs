@@ -3,6 +3,7 @@ using Codigo_Limpio.AbstracFactory.AFEjemplo1.Factory;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.Fabrica;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.PaimentServices;
 using Codigo_Limpio.comportamiento.Commend;
+using Codigo_Limpio.comportamiento.Commend.Ejercicio1;
 using Codigo_Limpio.Estructural.Adapter;
 using Codigo_Limpio.Estructural.Adapter.Ejercicio1;
 using Codigo_Limpio.Estructural.Adapter.Ejercicio1.Database;
@@ -459,3 +460,12 @@ Icommand cancelCommand = new CancerlarOrden(order);
 EjecutarCommand ejecutarCommand = new EjecutarCommand();
 ejecutarCommand.Ejecutar(command);
 ejecutarCommand.Ejecutar(cancelCommand);
+
+Console.WriteLine("Command Patter ejemplo 2 ______ Rquipo ");
+SmartTv smartTv = new SmartTv();
+IcommandTv openNetflixCommand = new ControlNetFlix(smartTv);
+IcommandTv openAmazonCommand = new ControlAmazon(smartTv);
+
+ControlRemoto controlRemoto = new ControlRemoto();
+controlRemoto.IcommandTv(openNetflixCommand);
+controlRemoto.IcommandTv(openAmazonCommand);
