@@ -1,5 +1,6 @@
 ﻿using Codigo_Limpio.AbstracFactory.AFEjemplo1;
 using Codigo_Limpio.AbstracFactory.AFEjemplo1.Factory;
+using Codigo_Limpio.AbstracFactory.Ejemplo2._2;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.Fabrica;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.PaimentServices;
 using Codigo_Limpio.comportamiento.Commend;
@@ -35,11 +36,14 @@ using Codigo_Limpio.FactoryMethod.Ejercicio1.implementacion;
 using Codigo_Limpio.FactoryMethod.Ejercicio2.Producto;
 using Codigo_Limpio.FactoryMethod.Factories;
 using Codigo_Limpio.FactoryMethod.Producto.Factory;
+using Codigo_Limpio.Iterator.IteratorEjemplo1;
+using Codigo_Limpio.Iterator.NewFolder;
 using Codigo_Limpio.PatronBuilder.ejercicio2;
 using Codigo_Limpio.Prototype.Ejemplo1;
 using Codigo_Limpio.Prototype.Ejemplo3.prototypos;
 using System.Net.Http.Headers;
 using System.Windows.Input;
+using System.Xml.Linq;
 using HombreLobo = Codigo_Limpio.Prototype.Ejemplo2.EjemploPrototype1.Clonables.Modelos.HombreLobo;
 
 //IModelo modelo = new Plano();
@@ -469,3 +473,35 @@ IcommandTv openAmazonCommand = new ControlAmazon(smartTv);
 ControlRemoto controlRemoto = new ControlRemoto();
 controlRemoto.IcommandTv(openNetflixCommand);
 controlRemoto.IcommandTv(openAmazonCommand);
+
+Console.WriteLine("Iterator ");
+var libreria = new Libreria();
+var iterator = libreria.CrearIterador();
+while (iterator.MoveNext()) {
+    var book = iterator.Next();
+    Console.WriteLine($"{book._title}, {book._autor}");
+}
+
+Console.WriteLine("Iterator ejemplo2");
+
+List<ModeloUsuario> usuarios2 = new List<ModeloUsuario>
+        {
+        new ModeloUsuario { IdUser = 1, Name = "Eder", Correo = "eder@example.com" },
+            new ModeloUsuario { IdUser = 2, Name = "Ana", Correo = "ana@example.com" },
+            new ModeloUsuario { IdUser = 3, Name = "Luis", Correo = "luis@example.com" },
+            new ModeloUsuario { IdUser = 4, Name = "Carla", Correo = "carla@example.com" },
+            new ModeloUsuario { IdUser = 5, Name = "Miguel", Correo= "miguel@example.com" },
+            new ModeloUsuario { IdUser = 6, Name = "Sofia", Correo = "sofia@example.com" },
+            new ModeloUsuario { IdUser = 7, Name = "David", Correo = "david@example.com" },
+            new ModeloUsuario { IdUser = 8, Name = "Laura", Correo = "laura@example.com" },
+            new ModeloUsuario { IdUser = 9, Name = "Carlos", Correo = "carlos@example.com" },
+            new ModeloUsuario { IdUser = 10, Name = "Marta", Correo = "marta@example.com" }
+        };
+
+BibliotecaDeUsuarios bibliotecaUsuarios= new BibliotecaDeUsuarios(usuarios2);
+var iterar = bibliotecaUsuarios.createIterator();
+while (iterar.HasNextUSer()) {
+    var  contador = iterar.NextUser();
+
+    Console.WriteLine($"ID:{contador.IdUser}, Nombre: {contador.Name}, Correo: {contador.Correo}");
+}
