@@ -5,7 +5,7 @@ using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.Iterator.IteratorEjemplo1
+namespace Codigo_Limpio.comportamiento.Iterator.IteratorEjemplo1
 {
     public  class FaebookIterator : IteratorFacebook<ModeloUsuario>
     {
@@ -20,7 +20,7 @@ namespace Codigo_Limpio.Iterator.IteratorEjemplo1
 
         public ModeloUsuario CurrentUser()
         {
-            throw new NotImplementedException();
+           return _modelo[_posicion];
         }
 
         public bool HasNextUSer()
@@ -34,8 +34,5 @@ namespace Codigo_Limpio.Iterator.IteratorEjemplo1
             _posicion++;
             return usuario;
         }
-
-       
-
     }
 }

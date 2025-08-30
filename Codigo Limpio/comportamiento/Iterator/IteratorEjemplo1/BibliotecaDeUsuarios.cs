@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.Iterator.IteratorEjemplo1
+namespace Codigo_Limpio.comportamiento.Iterator.IteratorEjemplo1
 {
     public class BibliotecaDeUsuarios : CreateIterator<ModeloUsuario>
     {
@@ -14,7 +14,7 @@ namespace Codigo_Limpio.Iterator.IteratorEjemplo1
         {
             _modelos = modelos;
         }
-
+        
 
         public IteratorFacebook<ModeloUsuario> createIterator()
         { 

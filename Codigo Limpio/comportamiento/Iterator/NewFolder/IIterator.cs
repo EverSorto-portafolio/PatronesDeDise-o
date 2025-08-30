@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.Iterator.NewFolder
+namespace Codigo_Limpio.comportamiento.Iterator.NewFolder
 {
-    public interface Icollection<T>
+    public  interface IIterator<T>
     {
-     
-        IIterator<T> CrearIterador();
+        bool MoveNext();
+        T Next();
     }
 }

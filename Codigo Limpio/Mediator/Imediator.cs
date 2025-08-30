@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.Iterator.NewFolder
+namespace Codigo_Limpio.Mediator
 {
-    public  interface IIterator<T>
+    public  interface Imediator
     {
-        bool MoveNext();
-        T Next();
+        void Notify(object sender, string eventCode);
     }
 }

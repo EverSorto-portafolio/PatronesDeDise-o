@@ -1,10 +1,11 @@
 ﻿using Codigo_Limpio.AbstracFactory.AFEjemplo1;
 using Codigo_Limpio.AbstracFactory.AFEjemplo1.Factory;
-using Codigo_Limpio.AbstracFactory.Ejemplo2._2;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.Fabrica;
 using Codigo_Limpio.AbstracFactory.Ejercicio3.PaimentServices;
 using Codigo_Limpio.comportamiento.Commend;
 using Codigo_Limpio.comportamiento.Commend.Ejercicio1;
+using Codigo_Limpio.comportamiento.Iterator.IteratorEjemplo1;
+using Codigo_Limpio.comportamiento.Iterator.NewFolder;
 using Codigo_Limpio.Estructural.Adapter;
 using Codigo_Limpio.Estructural.Adapter.Ejercicio1;
 using Codigo_Limpio.Estructural.Adapter.Ejercicio1.Database;
@@ -36,14 +37,12 @@ using Codigo_Limpio.FactoryMethod.Ejercicio1.implementacion;
 using Codigo_Limpio.FactoryMethod.Ejercicio2.Producto;
 using Codigo_Limpio.FactoryMethod.Factories;
 using Codigo_Limpio.FactoryMethod.Producto.Factory;
-using Codigo_Limpio.Iterator.IteratorEjemplo1;
-using Codigo_Limpio.Iterator.NewFolder;
+using Codigo_Limpio.Mediator;
+using Codigo_Limpio.Mediator.ejercicio2;
+using Codigo_Limpio.Mediator.NewFolder;
 using Codigo_Limpio.PatronBuilder.ejercicio2;
 using Codigo_Limpio.Prototype.Ejemplo1;
 using Codigo_Limpio.Prototype.Ejemplo3.prototypos;
-using System.Net.Http.Headers;
-using System.Windows.Input;
-using System.Xml.Linq;
 using HombreLobo = Codigo_Limpio.Prototype.Ejemplo2.EjemploPrototype1.Clonables.Modelos.HombreLobo;
 
 //IModelo modelo = new Plano();
@@ -505,3 +504,38 @@ while (iterar.HasNextUSer()) {
 
     Console.WriteLine($"ID:{contador.IdUser}, Nombre: {contador.Name}, Correo: {contador.Correo}");
 }
+
+Console.WriteLine("Prueba Facorty Method2 ___________Decorator____________________________");
+CarroDeCompras carroDeCompras = new CarroDeCompras(null);
+Inventario inventario = new Inventario(null);
+
+Tienda tienda = new Tienda(inventario, carroDeCompras);
+
+carroDeCompras.SetMediator(tienda);
+inventario.SetMediator(tienda);
+
+carroDeCompras.addItem("Sopa marucha");
+carroDeCompras.addItem("limones");
+
+Console.WriteLine("---------------------------------------------");
+
+
+// creamos los aviones
+AirBus airbus = new AirBus();
+AvionAeropuerto avion5 = new AvionAeropuerto();
+
+IAeroPuerto Torre = new TorreDeControl(airbus,avion5);
+
+airbus.setInstruccion(Torre);
+avion5.setInstruccion(Torre);
+
+airbus.OperacionB("Preparandome para despegar");
+avion5.OperacionA("Preaparandome para aterrizar");
+
+Console.WriteLine("---------------------------------------------");
+
+IAtraficControl torre = new Tower();
+AirCraft avion1 = new AirPlane(torre, "Boing 777");
+AirCraft avion3 = new AirPlane(torre, "AirBus 767");
+
+avion3.SendMessage("Bong  saludos desde el aire");
