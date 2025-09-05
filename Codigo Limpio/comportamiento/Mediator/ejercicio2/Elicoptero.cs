@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.Mediator.ejercicio2
+namespace Codigo_Limpio.comportamiento.Mediator.ejercicio2
 {
     public  class Elicoptero : AirCraft
     {

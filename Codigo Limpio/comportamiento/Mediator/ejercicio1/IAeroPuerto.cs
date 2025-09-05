@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.Mediator.NewFolder
+namespace Codigo_Limpio.comportamiento.Mediator.ejercicio1
 {
     public  interface IAeroPuerto
     {
-        void enviarMensaje(Object enviar, string mensaje);
+        void enviarMensaje(object enviar, string mensaje);
 
     }
 }

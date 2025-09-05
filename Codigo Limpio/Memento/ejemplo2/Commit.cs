@@ -4,10 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.Mediator
+namespace Codigo_Limpio.Memento.ejemplo2
 {
-    public  interface Imediator
+    public  class Commit
     {
-        void Notify(object sender, string eventCode);
+        public string Code { get; set; }
+
+
+
+
     }
 }

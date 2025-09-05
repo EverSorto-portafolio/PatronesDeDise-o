@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.Mediator
+namespace Codigo_Limpio.comportamiento.Mediator
 {
     public  class CarroDeCompras
     {

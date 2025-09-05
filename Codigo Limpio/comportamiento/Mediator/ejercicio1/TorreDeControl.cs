@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
 
-namespace Codigo_Limpio.Mediator.NewFolder
+namespace Codigo_Limpio.comportamiento.Mediator.ejercicio1
 {
     public  class TorreDeControl : IAeroPuerto
     {
