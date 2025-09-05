@@ -9,9 +9,5 @@ namespace Codigo_Limpio.Memento.ejemplo2
     public  class Commit
     {
         public string Code { get; set; }
-
-
-
-
     }
 }

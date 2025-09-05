@@ -39,7 +39,5 @@ namespace Codigo_Limpio.Memento.ejemplo2
            
           return _commits.FirstOrDefault(code => code.Code == commit.Code) ?? throw new Exception("Error retorno un null");  
         }
-
-       
     }
 }
