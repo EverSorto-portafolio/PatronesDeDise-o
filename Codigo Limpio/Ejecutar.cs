@@ -9,6 +9,8 @@ using Codigo_Limpio.comportamiento.Iterator.NewFolder;
 using Codigo_Limpio.comportamiento.Mediator;
 using Codigo_Limpio.comportamiento.Mediator.ejercicio1;
 using Codigo_Limpio.comportamiento.Mediator.ejercicio2;
+using Codigo_Limpio.comportamiento.Memento;
+using Codigo_Limpio.comportamiento.Memento.ejemplo2;
 using Codigo_Limpio.Estructural.Adapter;
 using Codigo_Limpio.Estructural.Adapter.Ejercicio1;
 using Codigo_Limpio.Estructural.Adapter.Ejercicio1.Database;
@@ -40,8 +42,8 @@ using Codigo_Limpio.FactoryMethod.Ejercicio1.implementacion;
 using Codigo_Limpio.FactoryMethod.Ejercicio2.Producto;
 using Codigo_Limpio.FactoryMethod.Factories;
 using Codigo_Limpio.FactoryMethod.Producto.Factory;
-using Codigo_Limpio.Memento;
-using Codigo_Limpio.Memento.ejemplo2;
+using Codigo_Limpio.Observer;
+using Codigo_Limpio.Observer.ejemplo1;
 using Codigo_Limpio.PatronBuilder.ejercicio2;
 using Codigo_Limpio.Prototype.Ejemplo1;
 using Codigo_Limpio.Prototype.Ejemplo3.prototypos;
@@ -594,3 +596,56 @@ iniciar.Code = "1111";
 estado.Revert(  iniciar );
 Console.WriteLine($"Estado Guardad {iniciar.Code}");
 
+Console.WriteLine("-----------------Observer----------------------------");
+ModeloTv _modelo = new ModeloTv();
+_modelo.control = "esw2";
+_modelo.Marca = "RCA";
+_modelo.modelo = "Rj-2025";
+
+Tv tv = new Tv();
+Tv tv1 = new Tv();
+Tv tv2 = new Tv();
+
+ObservadorTV observadorTV = new ObservadorTV();
+observadorTV.ActualizarModelo(_modelo);
+observadorTV.RegistrarObservador(tv);
+observadorTV.RegistrarObservador(tv1);
+observadorTV.RegistrarObservador(tv2);
+observadorTV.Notificar();
+Console.WriteLine("-----------------Observer----------------------------");
+_modelo.control = "esw3";
+_modelo.Marca = "RCA2";
+_modelo.modelo = "Rj-2028";
+observadorTV.ActualizarModelo(_modelo);
+
+
+observadorTV.Notificar();
+
+Console.WriteLine("--------------------------------------------");
+IObjeto subastador = new Imp_lementacionIObjeto();
+IObjeto subastador2 = new Imp_lementacionIObjeto();
+IObjeto subastador3 = new Imp_lementacionIObjeto();
+Subasta objetoOfertado = new Subasta
+{
+    IdArticulo = 1,
+    Oferta = 100f,
+    Precio = 80
+};
+
+ImplementacionPostulante nuevaOferta = new ImplementacionPostulante();
+nuevaOferta.Registrar(subastador);
+nuevaOferta.ActualizarPropuesta(objetoOfertado);
+
+Console.WriteLine("--------------------------------------------");
+
+Subasta objetoOfertado1 = new Subasta
+{
+    IdArticulo = 1,
+    Oferta = 400f,
+    Precio = 303
+};
+Console.WriteLine("--------------------------------------------");
+
+nuevaOferta.Registrar(subastador2);
+nuevaOferta.Registrar(subastador3);
+nuevaOferta.ActualizarPropuesta(objetoOfertado1);

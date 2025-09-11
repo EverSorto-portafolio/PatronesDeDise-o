@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.Memento
+namespace Codigo_Limpio.comportamiento.Memento
 {
     public class Personaje
     {

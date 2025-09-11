@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="comportamiento\Memento\Ejercicio3\" />
     <Folder Include="Patrones Creacionales\FactoryMethod\Ejercicio2\Implementaciones\" />
     <Folder Include="Patrones Creacionales\Prototype\Ejemplo1\clones\" />
   </ItemGroup>
