@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.Observer.ejemplo1
+namespace Codigo_Limpio.State
 {
-    public interface IObjeto
+    public interface IStado
     {
-        void update(Subasta subasta);
+        void Handle(EstadoContexto context);
     }
 }

@@ -11,6 +11,8 @@ using Codigo_Limpio.comportamiento.Mediator.ejercicio1;
 using Codigo_Limpio.comportamiento.Mediator.ejercicio2;
 using Codigo_Limpio.comportamiento.Memento;
 using Codigo_Limpio.comportamiento.Memento.ejemplo2;
+using Codigo_Limpio.comportamiento.Observer;
+using Codigo_Limpio.comportamiento.Observer.ejemplo1;
 using Codigo_Limpio.Estructural.Adapter;
 using Codigo_Limpio.Estructural.Adapter.Ejercicio1;
 using Codigo_Limpio.Estructural.Adapter.Ejercicio1.Database;
@@ -42,11 +44,10 @@ using Codigo_Limpio.FactoryMethod.Ejercicio1.implementacion;
 using Codigo_Limpio.FactoryMethod.Ejercicio2.Producto;
 using Codigo_Limpio.FactoryMethod.Factories;
 using Codigo_Limpio.FactoryMethod.Producto.Factory;
-using Codigo_Limpio.Observer;
-using Codigo_Limpio.Observer.ejemplo1;
 using Codigo_Limpio.PatronBuilder.ejercicio2;
 using Codigo_Limpio.Prototype.Ejemplo1;
 using Codigo_Limpio.Prototype.Ejemplo3.prototypos;
+using Codigo_Limpio.State;
 using HombreLobo = Codigo_Limpio.Prototype.Ejemplo2.EjemploPrototype1.Clonables.Modelos.HombreLobo;
 
 #region patrones
@@ -545,107 +546,112 @@ using HombreLobo = Codigo_Limpio.Prototype.Ejemplo2.EjemploPrototype1.Clonables.
 
 //avion3.SendMessage("Bong  saludos desde el aire");
 #endregion
-Juego juego = new Juego();
-GameSaveManager gameManager = new GameSaveManager();
+//Juego juego = new Juego();
+//GameSaveManager gameManager = new GameSaveManager();
 
-juego.estadoActual = new Personaje {
-    Level = 5,
-    Salud = 99,
-    Equipo = "lazo"
-};
+//juego.estadoActual = new Personaje {
+//    Level = 5,
+//    Salud = 99,
+//    Equipo = "lazo"
+//};
 
-Console.WriteLine($"Estado actual{juego.estadoActual.Level}");
+//Console.WriteLine($"Estado actual{juego.estadoActual.Level}");
 
-gameManager.SaveGame(juego);
-Console.WriteLine("Juego Guardado");
+//gameManager.SaveGame(juego);
+//Console.WriteLine("Juego Guardado");
 
- juego.estadoActual = new Personaje
-{
-    Level = 6,
-    Salud = 79,
-    Equipo = "Un palo"
-};
-Console.WriteLine($"Estado actual {juego.estadoActual.Level}");
+// juego.estadoActual = new Personaje
+//{
+//    Level = 6,
+//    Salud = 79,
+//    Equipo = "Un palo"
+//};
+//Console.WriteLine($"Estado actual {juego.estadoActual.Level}");
 
-gameManager.loadGeme(juego, 0);
-Console.WriteLine($"Estado actual {juego.estadoActual.Level}");
+//gameManager.loadGeme(juego, 0);
+//Console.WriteLine($"Estado actual {juego.estadoActual.Level}");
 
-Commit iniciar = new Commit();
+//Commit iniciar = new Commit();
 
-iniciar.Code = "1111";
+//iniciar.Code = "1111";
 
-Console.WriteLine($"Estado Actual {iniciar.Code}");
+//Console.WriteLine($"Estado Actual {iniciar.Code}");
 
-Git estado = new Git(iniciar);
-estado.Commit();
-Console.WriteLine($"Estado Guardad {iniciar.Code}");
+//Git estado = new Git(iniciar);
+//estado.Commit();
+//Console.WriteLine($"Estado Guardad {iniciar.Code}");
 
-iniciar.Code = "12";
-Console.WriteLine($"Estado Modificado {iniciar.Code}");
+//iniciar.Code = "12";
+//Console.WriteLine($"Estado Modificado {iniciar.Code}");
 
-estado.Commit();
-Console.WriteLine($"Estado Guardad {iniciar.Code}");
+//estado.Commit();
+//Console.WriteLine($"Estado Guardad {iniciar.Code}");
 
-iniciar.Code = "1s2";
-Console.WriteLine($"Estado Modificado {iniciar.Code}");
-estado.Commit();
-Console.WriteLine($"Estado Guardad {iniciar.Code}");
+//iniciar.Code = "1s2";
+//Console.WriteLine($"Estado Modificado {iniciar.Code}");
+//estado.Commit();
+//Console.WriteLine($"Estado Guardad {iniciar.Code}");
 
-Console.WriteLine("Recuperando el estado anterior");
-iniciar.Code = "1111";
-estado.Revert(  iniciar );
-Console.WriteLine($"Estado Guardad {iniciar.Code}");
+//Console.WriteLine("Recuperando el estado anterior");
+//iniciar.Code = "1111";
+//estado.Revert(  iniciar );
+//Console.WriteLine($"Estado Guardad {iniciar.Code}");
 
-Console.WriteLine("-----------------Observer----------------------------");
-ModeloTv _modelo = new ModeloTv();
-_modelo.control = "esw2";
-_modelo.Marca = "RCA";
-_modelo.modelo = "Rj-2025";
+//Console.WriteLine("-----------------Observer----------------------------");
+//ModeloTv _modelo = new ModeloTv();
+//_modelo.control = "esw2";
+//_modelo.Marca = "RCA";
+//_modelo.modelo = "Rj-2025";
 
-Tv tv = new Tv();
-Tv tv1 = new Tv();
-Tv tv2 = new Tv();
+//Tv tv = new Tv();
+//Tv tv1 = new Tv();
+//Tv tv2 = new Tv();
 
-ObservadorTV observadorTV = new ObservadorTV();
-observadorTV.ActualizarModelo(_modelo);
-observadorTV.RegistrarObservador(tv);
-observadorTV.RegistrarObservador(tv1);
-observadorTV.RegistrarObservador(tv2);
-observadorTV.Notificar();
-Console.WriteLine("-----------------Observer----------------------------");
-_modelo.control = "esw3";
-_modelo.Marca = "RCA2";
-_modelo.modelo = "Rj-2028";
-observadorTV.ActualizarModelo(_modelo);
+//ObservadorTV observadorTV = new ObservadorTV();
+//observadorTV.ActualizarModelo(_modelo);
+//observadorTV.RegistrarObservador(tv);
+//observadorTV.RegistrarObservador(tv1);
+//observadorTV.RegistrarObservador(tv2);
+//observadorTV.Notificar();
+//Console.WriteLine("-----------------Observer----------------------------");
+//_modelo.control = "esw3";
+//_modelo.Marca = "RCA2";
+//_modelo.modelo = "Rj-2028";
+//observadorTV.ActualizarModelo(_modelo);
 
 
-observadorTV.Notificar();
+//observadorTV.Notificar();
 
-Console.WriteLine("--------------------------------------------");
-IObjeto subastador = new Imp_lementacionIObjeto();
-IObjeto subastador2 = new Imp_lementacionIObjeto();
-IObjeto subastador3 = new Imp_lementacionIObjeto();
-Subasta objetoOfertado = new Subasta
-{
-    IdArticulo = 1,
-    Oferta = 100f,
-    Precio = 80
-};
+//Console.WriteLine("--------------------------------------------");
+//IObjeto subastador = new Imp_lementacionIObjeto();
+//IObjeto subastador2 = new Imp_lementacionIObjeto();
+//IObjeto subastador3 = new Imp_lementacionIObjeto();
+//Subasta objetoOfertado = new Subasta
+//{
+//    IdArticulo = 1,
+//    Oferta = 100f,
+//    Precio = 80
+//};
 
-ImplementacionPostulante nuevaOferta = new ImplementacionPostulante();
-nuevaOferta.Registrar(subastador);
-nuevaOferta.ActualizarPropuesta(objetoOfertado);
+//ImplementacionPostulante nuevaOferta = new ImplementacionPostulante();
+//nuevaOferta.Registrar(subastador);
+//nuevaOferta.ActualizarPropuesta(objetoOfertado);
 
-Console.WriteLine("--------------------------------------------");
+//Console.WriteLine("--------------------------------------------");
 
-Subasta objetoOfertado1 = new Subasta
-{
-    IdArticulo = 1,
-    Oferta = 400f,
-    Precio = 303
-};
-Console.WriteLine("--------------------------------------------");
+//Subasta objetoOfertado1 = new Subasta
+//{
+//    IdArticulo = 1,
+//    Oferta = 400f,
+//    Precio = 303
+//};
+//Console.WriteLine("--------------------------------------------");
 
-nuevaOferta.Registrar(subastador2);
-nuevaOferta.Registrar(subastador3);
-nuevaOferta.ActualizarPropuesta(objetoOfertado1);
+//nuevaOferta.Registrar(subastador2);
+//nuevaOferta.Registrar(subastador3);
+//nuevaOferta.ActualizarPropuesta(objetoOfertado1);
+//Console.WriteLine("--------------------------------------------");
+EstadoContexto contexto = new EstadoContexto();
+for (int i =0; i<10;i++) {
+    contexto.Request();
+}

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.Observer.ejemplo1
+namespace Codigo_Limpio.comportamiento.Observer.ejemplo1
 {
 
     public class ImplementacionPostulante : IPostulante

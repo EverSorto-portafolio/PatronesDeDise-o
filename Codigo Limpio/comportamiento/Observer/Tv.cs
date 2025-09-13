@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo_Limpio.Observer
+namespace Codigo_Limpio.comportamiento.Observer
 {
     public class Tv : IObserver
     {
