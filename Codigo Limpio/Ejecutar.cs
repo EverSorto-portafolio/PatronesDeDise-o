@@ -48,6 +48,7 @@ using Codigo_Limpio.PatronBuilder.ejercicio2;
 using Codigo_Limpio.Prototype.Ejemplo1;
 using Codigo_Limpio.Prototype.Ejemplo3.prototypos;
 using Codigo_Limpio.State;
+using Codigo_Limpio.State.Ejemplo1;
 using HombreLobo = Codigo_Limpio.Prototype.Ejemplo2.EjemploPrototype1.Clonables.Modelos.HombreLobo;
 
 #region patrones
@@ -652,6 +653,18 @@ using HombreLobo = Codigo_Limpio.Prototype.Ejemplo2.EjemploPrototype1.Clonables.
 //nuevaOferta.ActualizarPropuesta(objetoOfertado1);
 //Console.WriteLine("--------------------------------------------");
 EstadoContexto contexto = new EstadoContexto();
-for (int i =0; i<10;i++) {
-    contexto.Request();
-}
+//for (int i =0; i<10;i++) {
+//    contexto.Request();
+//}
+
+//Console.WriteLine("--------------------------------------------");
+Contexto _contexto = new Contexto();
+_contexto.SelecionarProducto("cocacola");
+_contexto.CambiarEstado(new Pagando());
+
+_contexto.PagarProducto(12);
+_contexto.CambiarEstado(new Despachar());
+
+_contexto.CambiarEstado(new Empy());
+_contexto.SelecionarProducto("cocacola");
+_contexto.PagarProducto(12);
