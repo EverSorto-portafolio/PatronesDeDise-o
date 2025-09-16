@@ -13,6 +13,8 @@ using Codigo_Limpio.comportamiento.Memento;
 using Codigo_Limpio.comportamiento.Memento.ejemplo2;
 using Codigo_Limpio.comportamiento.Observer;
 using Codigo_Limpio.comportamiento.Observer.ejemplo1;
+using Codigo_Limpio.comportamiento.Strategy;
+using Codigo_Limpio.comportamiento.Strategy.EjercicioStrategy;
 using Codigo_Limpio.Estructural.Adapter;
 using Codigo_Limpio.Estructural.Adapter.Ejercicio1;
 using Codigo_Limpio.Estructural.Adapter.Ejercicio1.Database;
@@ -49,6 +51,7 @@ using Codigo_Limpio.Prototype.Ejemplo1;
 using Codigo_Limpio.Prototype.Ejemplo3.prototypos;
 using Codigo_Limpio.State;
 using Codigo_Limpio.State.Ejemplo1;
+using System.Security.Cryptography.X509Certificates;
 using HombreLobo = Codigo_Limpio.Prototype.Ejemplo2.EjemploPrototype1.Clonables.Modelos.HombreLobo;
 
 #region patrones
@@ -657,14 +660,61 @@ EstadoContexto contexto = new EstadoContexto();
 //    contexto.Request();
 //}
 
-//Console.WriteLine("--------------------------------------------");
-Contexto _contexto = new Contexto();
-_contexto.SelecionarProducto("cocacola");
-_contexto.CambiarEstado(new Pagando());
+////Console.WriteLine("--------------------------------------------");
+//Contexto _contexto = new Contexto();
+//_contexto.SelecionarProducto("cocacola");
+//_contexto.CambiarEstado(new Pagando());
 
-_contexto.PagarProducto(12);
-_contexto.CambiarEstado(new Despachar());
+//_contexto.PagarProducto(12);
+//_contexto.CambiarEstado(new Despachar());
 
-_contexto.CambiarEstado(new Empy());
-_contexto.SelecionarProducto("cocacola");
-_contexto.PagarProducto(12);
+//_contexto.CambiarEstado(new Empy());
+//_contexto.SelecionarProducto("cocacola");
+//_contexto.PagarProducto(12);
+
+//Console.WriteLine("Usando Strategy");
+
+
+
+//ContextoRuta rutas = new ContextoRuta( new RutaCorta());
+//Console.WriteLine("Selecuione la ruta a tomar, 1 corta, 2 sin autopistas");
+//string respuesta = Console.ReadLine();
+
+//switch (respuesta) {
+//    case "1":
+//        rutas.SetContext(new RutaCorta());
+//        break;
+//    case "2":
+//        rutas.SetContext(new SinAutopistas());
+//        break;
+
+//    default:
+//        rutas.SetContext(new Ruta_sugerida());
+//        Console.WriteLine("Opcion por default");
+//        break;
+//}
+//Console.WriteLine(rutas.ExecutarStrategy("lago coatepeque", "Parque Balboa"));
+
+ContexroTransporte medioDeTransporte = new ContexroTransporte( new TransporteCaminar());
+Console.WriteLine("Cuando desean gastar en trasnporte");
+float pasaje =  float.Parse(Console.ReadLine());
+if (  pasaje < 0.50f ) {
+    medioDeTransporte.SelecionarTransporte(new TransporteCaminar());
+    Console.WriteLine(medioDeTransporte.ejecutarTransporte(pasaje));
+    return;
+}
+
+if (pasaje > 10f && pasaje<50)
+{
+    medioDeTransporte.SelecionarTransporte(new TransporteAutobus());
+    Console.WriteLine(medioDeTransporte.ejecutarTransporte(pasaje));
+    return;
+}
+
+if (pasaje > 50f )
+{
+    medioDeTransporte.SelecionarTransporte(new TrnasporteAutomovil());
+    Console.WriteLine(medioDeTransporte.ejecutarTransporte(pasaje));
+    return;
+}
+
