@@ -16,6 +16,7 @@ using Codigo_Limpio.comportamiento.Observer.ejemplo1;
 using Codigo_Limpio.comportamiento.Strategy;
 using Codigo_Limpio.comportamiento.Strategy.EjercicioStrategy;
 using Codigo_Limpio.comportamiento.templateMethod;
+using Codigo_Limpio.comportamiento.templateMethod.Ejericio1;
 using Codigo_Limpio.Estructural.Adapter;
 using Codigo_Limpio.Estructural.Adapter.Ejercicio1;
 using Codigo_Limpio.Estructural.Adapter.Ejercicio1.Database;
@@ -52,6 +53,8 @@ using Codigo_Limpio.Prototype.Ejemplo1;
 using Codigo_Limpio.Prototype.Ejemplo3.prototypos;
 using Codigo_Limpio.State;
 using Codigo_Limpio.State.Ejemplo1;
+using Codigo_Limpio.Visitor;
+using Codigo_Limpio.Visitor.VisitorEjemplo1;
 using System.Security.Cryptography.X509Certificates;
 using HombreLobo = Codigo_Limpio.Prototype.Ejemplo2.EjemploPrototype1.Clonables.Modelos.HombreLobo;
 
@@ -719,8 +722,41 @@ EstadoContexto contexto = new EstadoContexto();
 //    return;
 //}
 
-Console.WriteLine("------- template-------");
-var softwareCompany = new Computacion();
-softwareCompany.OrdenDeContratar();
-var Banco = new Banco();
-Banco.OrdenDeContratar();
+//Console.WriteLine("------- template-------");
+//var softwareCompany = new Computacion();
+//softwareCompany.OrdenDeContratar();
+//var Banco = new Banco();
+//Banco.OrdenDeContratar();
+
+//Console.WriteLine("------- template-------");
+//CarneAsada res = new CarneAsada();
+//res.Arroz();
+//res.Agua();
+//res.Especias();
+//res.mostrarListaEspecias();
+
+//CarneDePollo pollo = new CarneDePollo();
+//pollo.Arroz();
+//pollo.Agua();
+//pollo.Especias();
+
+
+//var listaAnimal = new List<IAnimal> { new Leon(), new Mono() };
+
+//var listaActividades = new List<IAnimalOperacion> { new EntrenarAnimal(), new AnimalRevison() };
+
+//foreach (var animal in listaAnimal) {
+//    foreach (var operacion  in listaActividades) {
+//        animal.Accept(operacion);
+//    }
+//}
+
+var aparatos = new List<IServiciosTienda> { new Laptop(), new Celular(), new Licuadora() };
+
+var trabajo = new List<Itrabajo> { new Reparacion(), new enviarAparato() };
+
+foreach (var articulo in aparatos) {
+    foreach (var actividad in trabajo) {
+        articulo.trabajo(actividad);
+    }
+}
