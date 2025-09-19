@@ -15,6 +15,7 @@ using Codigo_Limpio.comportamiento.Observer;
 using Codigo_Limpio.comportamiento.Observer.ejemplo1;
 using Codigo_Limpio.comportamiento.Strategy;
 using Codigo_Limpio.comportamiento.Strategy.EjercicioStrategy;
+using Codigo_Limpio.comportamiento.templateMethod;
 using Codigo_Limpio.Estructural.Adapter;
 using Codigo_Limpio.Estructural.Adapter.Ejercicio1;
 using Codigo_Limpio.Estructural.Adapter.Ejercicio1.Database;
@@ -695,26 +696,31 @@ EstadoContexto contexto = new EstadoContexto();
 //}
 //Console.WriteLine(rutas.ExecutarStrategy("lago coatepeque", "Parque Balboa"));
 
-ContexroTransporte medioDeTransporte = new ContexroTransporte( new TransporteCaminar());
-Console.WriteLine("Cuando desean gastar en trasnporte");
-float pasaje =  float.Parse(Console.ReadLine());
-if (  pasaje < 0.50f ) {
-    medioDeTransporte.SelecionarTransporte(new TransporteCaminar());
-    Console.WriteLine(medioDeTransporte.ejecutarTransporte(pasaje));
-    return;
-}
+//ContexroTransporte medioDeTransporte = new ContexroTransporte( new TransporteCaminar());
+//Console.WriteLine("Cuando desean gastar en trasnporte");
+//float pasaje =  float.Parse(Console.ReadLine());
+//if (  pasaje < 0.50f ) {
+//    medioDeTransporte.SelecionarTransporte(new TransporteCaminar());
+//    Console.WriteLine(medioDeTransporte.ejecutarTransporte(pasaje));
+//    return;
+//}
 
-if (pasaje > 10f && pasaje<50)
-{
-    medioDeTransporte.SelecionarTransporte(new TransporteAutobus());
-    Console.WriteLine(medioDeTransporte.ejecutarTransporte(pasaje));
-    return;
-}
+//if (pasaje > 10f && pasaje<50)
+//{
+//    medioDeTransporte.SelecionarTransporte(new TransporteAutobus());
+//    Console.WriteLine(medioDeTransporte.ejecutarTransporte(pasaje));
+//    return;
+//}
 
-if (pasaje > 50f )
-{
-    medioDeTransporte.SelecionarTransporte(new TrnasporteAutomovil());
-    Console.WriteLine(medioDeTransporte.ejecutarTransporte(pasaje));
-    return;
-}
+//if (pasaje > 50f )
+//{
+//    medioDeTransporte.SelecionarTransporte(new TrnasporteAutomovil());
+//    Console.WriteLine(medioDeTransporte.ejecutarTransporte(pasaje));
+//    return;
+//}
 
+Console.WriteLine("------- template-------");
+var softwareCompany = new Computacion();
+softwareCompany.OrdenDeContratar();
+var Banco = new Banco();
+Banco.OrdenDeContratar();
